@@ -1,0 +1,13 @@
+#Sat Aug 24 00:11:37 ICT 2024
+base.0=/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_non_expo/movies_react_native/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_non_expo/movies_react_native/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.2=/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_non_expo/movies_react_native/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
+base.3=/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_non_expo/movies_react_native/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex
+path.0=classes.dex
+path.1=0/classes.dex
+path.2=14/classes.dex
+path.3=6/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex
+renamed.3=classes4.dex
