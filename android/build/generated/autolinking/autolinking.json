@@ -1,8 +1,97 @@
 {
-  "root": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_non_expo/movies_react_native",
-  "reactNativePath": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_non_expo/movies_react_native/node_modules/react-native",
+  "root": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw",
+  "reactNativePath": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/node_modules/react-native",
   "reactNativeVersion": "0.75",
-  "dependencies": {},
+  "dependencies": {
+    "react-native-safe-area-context": {
+      "root": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/node_modules/react-native-safe-area-context",
+      "name": "react-native-safe-area-context",
+      "platforms": {
+        "ios": {
+          "podspecPath": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/node_modules/react-native-safe-area-context/react-native-safe-area-context.podspec",
+          "version": "4.10.9",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/node_modules/react-native-safe-area-context/android",
+          "packageImportPath": "import com.th3rdwave.safeareacontext.SafeAreaContextPackage;",
+          "packageInstance": "new SafeAreaContextPackage()",
+          "buildTypes": [],
+          "libraryName": "safeareacontext",
+          "componentDescriptors": [
+            "RNCSafeAreaProviderComponentDescriptor",
+            "RNCSafeAreaViewComponentDescriptor"
+          ],
+          "cmakeListsPath": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-screens": {
+      "root": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/node_modules/react-native-screens",
+      "name": "react-native-screens",
+      "platforms": {
+        "ios": {
+          "podspecPath": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/node_modules/react-native-screens/RNScreens.podspec",
+          "version": "3.34.0",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/node_modules/react-native-screens/android",
+          "packageImportPath": "import com.swmansion.rnscreens.RNScreensPackage;",
+          "packageInstance": "new RNScreensPackage()",
+          "buildTypes": [],
+          "libraryName": "rnscreens",
+          "componentDescriptors": [
+            "RNSFullWindowOverlayComponentDescriptor",
+            "RNSScreenContainerComponentDescriptor",
+            "RNSScreenNavigationContainerComponentDescriptor",
+            "RNSScreenStackHeaderConfigComponentDescriptor",
+            "RNSScreenStackHeaderSubviewComponentDescriptor",
+            "RNSScreenStackComponentDescriptor",
+            "RNSSearchBarComponentDescriptor",
+            "RNSScreenComponentDescriptor",
+            "RNSModalScreenComponentDescriptor"
+          ],
+          "cmakeListsPath": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-vector-icons": {
+      "root": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/node_modules/react-native-vector-icons",
+      "name": "react-native-vector-icons",
+      "platforms": {
+        "ios": {
+          "podspecPath": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/node_modules/react-native-vector-icons/RNVectorIcons.podspec",
+          "version": "10.1.0",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/node_modules/react-native-vector-icons/android",
+          "packageImportPath": "import com.oblador.vectoricons.VectorIconsPackage;",
+          "packageInstance": "new VectorIconsPackage()",
+          "buildTypes": [],
+          "libraryName": "RNVectorIconsSpec",
+          "componentDescriptors": [],
+          "cmakeListsPath": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    }
+  },
   "commands": [
     {
       "name": "bundle",
@@ -164,7 +253,7 @@
         {
           "name": "--path <path>",
           "description": "Path to the React Native project root.",
-          "default": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_non_expo/movies_react_native"
+          "default": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw"
         },
         {
           "name": "--platform <string>",
@@ -447,7 +536,7 @@
   "assets": [],
   "project": {
     "ios": {
-      "sourceDir": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_non_expo/movies_react_native/ios",
+      "sourceDir": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/ios",
       "xcodeProject": {
         "name": "movies.xcworkspace",
         "path": ".",
@@ -456,7 +545,7 @@
       "assets": []
     },
     "android": {
-      "sourceDir": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_non_expo/movies_react_native/android",
+      "sourceDir": "/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/android",
       "appName": "app",
       "packageName": "com.movies",
       "applicationId": "com.movies",
