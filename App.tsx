@@ -20,6 +20,7 @@ import {
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import WelcomeToReactNative from './features/home/welcome_react_native_screen';
 
 // Example screens
 function ScreenA() {
@@ -40,8 +41,8 @@ function ScreenB() {
 
 // Data for dynamic tabs
 const tabsData = [
-  { name: 'TabA', component: ScreenA, icon: 'home' },
-  { name: 'TabB', component: ScreenB, icon: 'list' },
+  { name: 'Popular', component: ScreenA, icon: 'film-outline' },
+  { name: 'Welcome', component: WelcomeToReactNative, icon: 'list' },
 ];
 
 const Tab = createBottomTabNavigator();
