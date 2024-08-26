@@ -23,7 +23,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import WelcomeToReactNative from './features/welcome/screens/welcome_react_native_screen';
 import PopularMoviesScreen from './features/movies/screens/popular_movies';
 import { Provider } from 'react-redux';
-import { store } from './store';
+import { store } from './features/store';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 // Data for dynamic tabs
