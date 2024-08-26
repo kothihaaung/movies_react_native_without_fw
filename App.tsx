@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -37,41 +37,41 @@ const Tab = createBottomTabNavigator();
 function App(): React.JSX.Element {
   return (
     <Provider store={store}>
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={{
-          headerShown: false,
-          tabBarStyle: { 
-            backgroundColor: '#1a1919',
-            borderTopWidth: 0,
-          }, // Set background color to black
-          tabBarActiveTintColor: '#fff', // Set active icon and label color to white
-          tabBarInactiveTintColor: '#888', // Set inactive icon and label color to grey
-        }}
-      >
-        {tabsData.map((tab, index) => (
-          <Tab.Screen 
-            key={index} 
-            name={tab.name} 
-            component={tab.component} 
-            options={{
-              tabBarLabel: tab.name,
-              tabBarIcon: ({ color, size }) => (
-                <Ionicons name="home" color={color} size={size} />
-              ),
-            }} />
-        ))}
-      </Tab.Navigator>
-    </NavigationContainer>
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={{
+            headerShown: false,
+            tabBarStyle: {
+              backgroundColor: '#1a1919',
+              borderTopWidth: 0,
+            }, // Set background color to black
+            tabBarActiveTintColor: '#fff', // Set active icon and label color to white
+            tabBarInactiveTintColor: '#888', // Set inactive icon and label color to grey
+          }}
+        >
+          {tabsData.map((tab, index) => (
+            <Tab.Screen
+              key={index}
+              name={tab.name}
+              component={tab.component}
+              options={{
+                tabBarLabel: tab.name,
+                tabBarIcon: ({ color, size }) => (
+                  <Ionicons name="home" color={color} size={size} />
+                ),
+              }} />
+          ))}
+        </Tab.Navigator>
+      </NavigationContainer>
     </Provider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-  backgroundColor: Colors.darkBackgroundColor,
-  borderTopWidth: 0
-}
+    backgroundColor: Colors.darkBackgroundColor,
+    borderTopWidth: 0
+  }
 });
 
 export default App;
