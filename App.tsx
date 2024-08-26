@@ -20,7 +20,7 @@ import {
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import WelcomeToReactNative from './features/home/welcome_react_native_screen';
+import WelcomeToReactNative from './features/feature/welcome/welcome_react_native_screen';
 
 // Example screens
 function ScreenA() {
@@ -50,16 +50,18 @@ const Tab = createBottomTabNavigator();
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ color, size }) => {
-            const tab: any = tabsData.find(tab => tab.name === route.name);
-            return <Ionicons name={tab.icon} color={color} size={size} />;
-          },
-        })}
-      >
+      <Tab.Navigator>
         {tabsData.map((tab, index) => (
-          <Tab.Screen key={index} name={tab.name} component={tab.component} />
+          <Tab.Screen 
+            key={index} 
+            name={tab.name} 
+            component={tab.component} 
+            options={{
+              tabBarLabel: tab.name,
+              tabBarIcon: ({ color, size }) => (
+                <Ionicons name="home" color={color} size={size} />
+              ),
+            }} />
         ))}
       </Tab.Navigator>
     </NavigationContainer>
