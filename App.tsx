@@ -20,28 +20,14 @@ import {
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import WelcomeToReactNative from './features/feature/welcome/welcome_react_native_screen';
-
-// Example screens
-function ScreenA() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
-
-function ScreenB() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
+import WelcomeToReactNative from './features/welcome/screens/welcome_react_native_screen';
+import PopularMoviesScreen from './features/movies/screens/popular_movies';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 // Data for dynamic tabs
 const tabsData = [
-  { name: 'Popular', component: ScreenA, icon: 'film-outline' },
+  { name: 'Popular', component: PopularMoviesScreen, icon: 'film-outline' },
   { name: 'Welcome', component: WelcomeToReactNative, icon: 'list' },
 ];
 
@@ -49,6 +35,7 @@ const Tab = createBottomTabNavigator();
 
 function App(): React.JSX.Element {
   return (
+    <Provider store={store}>
     <NavigationContainer>
       <Tab.Navigator>
         {tabsData.map((tab, index) => (
@@ -65,6 +52,7 @@ function App(): React.JSX.Element {
         ))}
       </Tab.Navigator>
     </NavigationContainer>
+    </Provider>
   );
 }
 
