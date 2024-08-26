@@ -40,6 +40,7 @@ function App(): React.JSX.Element {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={{
+          headerShown: false,
           tabBarStyle: { 
             backgroundColor: '#1a1919',
             borderTopWidth: 0,
