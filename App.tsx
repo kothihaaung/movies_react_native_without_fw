@@ -24,6 +24,7 @@ import WelcomeToReactNative from './features/welcome/screens/welcome_react_nativ
 import PopularMoviesScreen from './features/movies/screens/popular_movies';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 // Data for dynamic tabs
 const tabsData = [
@@ -37,7 +38,16 @@ function App(): React.JSX.Element {
   return (
     <Provider store={store}>
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarStyle: { 
+            backgroundColor: '#1a1919',
+            borderTopWidth: 0,
+          }, // Set background color to black
+          tabBarActiveTintColor: '#fff', // Set active icon and label color to white
+          tabBarInactiveTintColor: '#888', // Set inactive icon and label color to grey
+        }}
+      >
         {tabsData.map((tab, index) => (
           <Tab.Screen 
             key={index} 
@@ -57,7 +67,10 @@ function App(): React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
-  
+  container: {
+  backgroundColor: Colors.darkBackgroundColor,
+  borderTopWidth: 0
+}
 });
 
 export default App;
