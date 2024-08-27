@@ -49,7 +49,7 @@ function App(): React.JSX.Element {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Tabs" component={tabs} />
+          <Stack.Screen name="Tabs" component={Tabs} />
           <Stack.Screen name='Welcome' component={WelcomeToReactNative} />
           {/* <Stack.Screen 
             name="MovieDetail"
@@ -62,7 +62,7 @@ function App(): React.JSX.Element {
   );
 }
 
-const tabs = () => {
+const Tabs = () => {
   return (
     <Tab.Navigator
       screenOptions={{
