@@ -33,6 +33,12 @@ const PopularMoviesScreen: React.FC<Props> = ({ navigation }) => {
     const dispatch = useDispatch();
     const { movies, loading, error } = useSelector((state: MoviesState) => state.movies);
 
+    // OnPress
+    // navigate for detail screen
+    const handlePress = (item: Movie) => {
+        navigation.navigate('MovieDetail', { item: item })
+    }
+
     useEffect(() => {
         const fetchMovies = async () => {
             dispatch(fetchMoviesRequest());
@@ -87,12 +93,6 @@ const PopularMoviesScreen: React.FC<Props> = ({ navigation }) => {
             <Text style={styles.title}>{item.title}</Text>
         </TouchableOpacity>
     );
-
-    // OnPress
-    // navigate for detail screen
-    const handlePress = (item: Movie) => {
-        navigation.navigate('MovieDetail', { item: item })
-    }
 
     return (
         <SafeAreaView style={styles.safeArea}>
