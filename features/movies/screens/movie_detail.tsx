@@ -29,7 +29,8 @@ const MovieDetailScreen: React.FC<Props> = ({ route, navigation }) => {
         });
     }, [navigation]);
 
-    const onPressToBack = () => {
+    // OnPressBack
+    const onPressBack = () => {
         navigation.goBack();
     };
 
@@ -37,9 +38,9 @@ const MovieDetailScreen: React.FC<Props> = ({ route, navigation }) => {
         <SafeAreaView style={styles.safeArea}>
             {/* background */}
             <View style={styles.background} />
-            
+
             <View style={styles.container}>
-                <TouchableOpacity style={styles.backButton} onPress={onPressToBack}>
+                <TouchableOpacity style={styles.backButton} onPress={onPressBack}>
                     <Ionicons name="arrow-back-circle" size={28} color="white" style={styles.backButtonIcon} />
                 </TouchableOpacity>
                 <Image
