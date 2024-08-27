@@ -50,7 +50,6 @@ function App(): React.JSX.Element {
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Tabs" component={Tabs} />
-          <Stack.Screen name='Welcome' component={WelcomeToReactNative} />
           {/* <Stack.Screen 
             name="MovieDetail"
             component={MovieDetailScreen}
@@ -67,7 +66,7 @@ const Tabs = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false, // Hide the header for all tabs
-        tabBarStyle: { backgroundColor: '#000' }, // Set background color to black
+        tabBarStyle: { borderTopWidth: 0, backgroundColor: '#1c1c1c' }, // Set background color to black
         tabBarActiveTintColor: '#fff', // Set active icon and label color to white
         tabBarInactiveTintColor: '#888', // Set inactive icon and label color to grey
       }}
