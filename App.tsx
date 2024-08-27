@@ -50,11 +50,11 @@ function App(): React.JSX.Element {
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Tabs" component={Tabs} />
-          {/* <Stack.Screen 
+          <Stack.Screen 
             name="MovieDetail"
             component={MovieDetailScreen}
             initialParams={{ item: initialMovie }} 
-          /> */}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
