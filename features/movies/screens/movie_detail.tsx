@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text, View, StyleSheet, Image, TouchableOpacity, Dimensions, SafeAreaView } from 'react-native';
+import { Button, Text, View, StyleSheet, Image, TouchableOpacity, Dimensions, SafeAreaView, StatusBar } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { Movie } from '../movie';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -35,10 +35,13 @@ const MovieDetailScreen: React.FC<Props> = ({ route, navigation }) => {
 
     return (
         <SafeAreaView style={styles.safeArea}>
+            {/* background */}
+            <View style={styles.background} />
+            
             <View style={styles.container}>
-                {/* <TouchableOpacity style={styles.backButton} onPress={onPressToBack}>
+                <TouchableOpacity style={styles.backButton} onPress={onPressToBack}>
                     <Ionicons name="arrow-back-circle" size={28} color="white" style={styles.backButtonIcon} />
-                </TouchableOpacity> */}
+                </TouchableOpacity>
                 <Image
                     source={{ uri: `https://image.tmdb.org/t/p/w500${item.poster_path}` }}
                     style={[styles.poster, { width: screenWidth - 32 }]}
@@ -46,7 +49,7 @@ const MovieDetailScreen: React.FC<Props> = ({ route, navigation }) => {
                 />
                 <Text style={styles.title}>{item.title}</Text>
                 <Text style={styles.overview}>{item.overview}</Text>
-                <View style={styles.spacer} /> 
+                <View style={styles.spacer} />
             </View>
         </SafeAreaView>
     );
@@ -60,6 +63,14 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
         padding: 20,
         backgroundColor: 'black',
+    },
+    background: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: '#000',
     },
     backButton: {
         position: 'absolute',
