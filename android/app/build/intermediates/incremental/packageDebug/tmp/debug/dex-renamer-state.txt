@@ -1,4 +1,4 @@
-#Sat Aug 24 12:07:59 ICT 2024
+#Tue Aug 27 21:25:49 ICT 2024
 base.0=/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/android/app/build/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
 base.2=/Users/thihathedev/Documents/dev/projects/ios/github/movies_react_native_without_fw/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex

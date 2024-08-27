@@ -88,6 +88,8 @@ const PopularMoviesScreen: React.FC<Props> = ({ navigation }) => {
         </TouchableOpacity>
     );
 
+    // OnPress
+    // navigate for detail screen
     const handlePress = (item: Movie) => {
         navigation.navigate('MovieDetail', { item: item })
     }

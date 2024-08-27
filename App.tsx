@@ -50,6 +50,7 @@ function App(): React.JSX.Element {
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Tabs" component={tabs} />
+          <Stack.Screen name='Welcome' component={WelcomeToReactNative} />
           {/* <Stack.Screen 
             name="MovieDetail"
             component={MovieDetailScreen}

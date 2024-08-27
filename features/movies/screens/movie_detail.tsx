@@ -40,7 +40,7 @@ const MovieDetailScreen: React.FC<Props> = ({ route, navigation }) => {
                     <Ionicons name="arrow-back-circle" size={28} color="white" style={styles.backButtonIcon} />
                 </TouchableOpacity> */}
                 <Image
-                    source={{ uri: `https://image.tmdb.org/t/p/w500${movie.poster_path}` }}
+                    source={{ uri: `https://image.tmdb.org/t/p/w500${item.poster_path}` }}
                     style={[styles.poster, { width: screenWidth - 32 }]}
                     resizeMode="cover"
                 />
