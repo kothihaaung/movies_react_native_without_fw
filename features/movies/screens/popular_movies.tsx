@@ -3,6 +3,7 @@ import { FlatList, Text, View, StyleSheet, ActivityIndicator, Image, SafeAreaVie
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMoviesRequest, fetchMoviesSuccess, fetchMoviesFailure } from '../movies_action';
 import { Movie } from '../movie';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 // Type for the Redux state
 interface MoviesState {
@@ -13,9 +14,22 @@ interface MoviesState {
     };
 }
 
-const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNGYzZWQ3YjA0NjY1NWM0NzRmMzM5OGFhYjQxMjY3ZCIsIm5iZiI6MTcyNDIxMDQ2NC4zMDc4OCwic3ViIjoiNjA0YWUwMTY5MGI4N2UwMDU4ZWU0YTQ0Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.Hcayqbgrx070hgnacNfTfgaFyirzFyq4OVmwMONV-1w';
+const ACCESS_TOKEN = '';
 
-const PopularMoviesScreen = () => {
+type RootStackParamList = {
+    Tabs: undefined;
+    MovieDetail: { item: Movie };
+};
+
+// Define the navigation prop type
+type PopularMoviesScreenNavigationProp = StackNavigationProp<RootStackParamList, 'MovieDetail'>;
+
+// Define the props type for PopularMoviesScreen
+type Props = {
+  navigation: PopularMoviesScreenNavigationProp;
+};
+
+const PopularMoviesScreen: React.FC<Props> = ({ navigation }) => {
     const dispatch = useDispatch();
     const { movies, loading, error } = useSelector((state: MoviesState) => state.movies);
 
@@ -75,10 +89,7 @@ const PopularMoviesScreen = () => {
     );
 
     const handlePress = (item: Movie) => {
-        // router.push({
-        //     pathname: '/features/movies/screens/movie_detail',
-        //     params: { item: JSON.stringify(item) }, // Or any unique identifier
-        // });
+        navigation.navigate('MovieDetail', { item: item })
     }
 
     return (

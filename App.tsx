@@ -24,7 +24,9 @@ import WelcomeToReactNative from './features/welcome/screens/welcome_react_nativ
 import PopularMoviesScreen from './features/movies/screens/popular_movies';
 import { Provider } from 'react-redux';
 import { store } from './features/store';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { createStackNavigator } from '@react-navigation/stack';
+import MovieDetailScreen from './features/movies/screens/movie_detail';
+import { Movie } from './features/movies/movie';
 
 // Data for dynamic tabs
 const tabsData = [
@@ -32,46 +34,62 @@ const tabsData = [
   { name: 'Welcome', component: WelcomeToReactNative, icon: 'list' },
 ];
 
+const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+
+const initialMovie: Movie = {
+  id: 0,
+  title: '',
+  overview: '',
+  poster_path: '',
+}
 
 function App(): React.JSX.Element {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Tab.Navigator
-          screenOptions={{
-            headerShown: false,
-            tabBarStyle: {
-              backgroundColor: '#1a1919',
-              borderTopWidth: 0,
-            }, // Set background color to black
-            tabBarActiveTintColor: '#fff', // Set active icon and label color to white
-            tabBarInactiveTintColor: '#888', // Set inactive icon and label color to grey
-          }}
-        >
-          {tabsData.map((tab, index) => (
-            <Tab.Screen
-              key={index}
-              name={tab.name}
-              component={tab.component}
-              options={{
-                tabBarLabel: tab.name,
-                tabBarIcon: ({ color, size }) => (
-                  <Ionicons name="home" color={color} size={size} />
-                ),
-              }} />
-          ))}
-        </Tab.Navigator>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Tabs" component={tabs} />
+          {/* <Stack.Screen 
+            name="MovieDetail"
+            component={MovieDetailScreen}
+            initialParams={{ item: initialMovie }} 
+          /> */}
+        </Stack.Navigator>
       </NavigationContainer>
     </Provider>
   );
 }
 
+const tabs = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false, // Hide the header for all tabs
+        tabBarStyle: { backgroundColor: '#000' }, // Set background color to black
+        tabBarActiveTintColor: '#fff', // Set active icon and label color to white
+        tabBarInactiveTintColor: '#888', // Set inactive icon and label color to grey
+      }}
+    >
+      {tabsData.map((tab, index) => (
+        <Tab.Screen
+          key={index}
+          name={tab.name}
+          component={tab.component}
+          options={{
+            tabBarLabel: tab.name,
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name={tab.icon} color={color} size={size} />
+            ),
+          }}
+        />
+      ))}
+    </Tab.Navigator>
+  );
+}
+
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: Colors.darkBackgroundColor,
-    borderTopWidth: 0
-  }
+  
 });
 
 export default App;
