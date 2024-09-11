@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { FlatList, Text, View, StyleSheet, ActivityIndicator, Image, SafeAreaView, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { FlatList, Text, View, StyleSheet, ActivityIndicator, Image, SafeAreaView, TouchableOpacity, Dimensions } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMoviesRequest, fetchMoviesSuccess, fetchMoviesFailure } from '../movies_action';
 import { Movie } from '../movie';
@@ -26,7 +26,7 @@ type PopularMoviesScreenNavigationProp = StackNavigationProp<RootStackParamList,
 
 // Define the props type for PopularMoviesScreen
 type Props = {
-  navigation: PopularMoviesScreenNavigationProp;
+    navigation: PopularMoviesScreenNavigationProp;
 };
 
 const PopularMoviesScreen: React.FC<Props> = ({ navigation }) => {
@@ -94,8 +94,28 @@ const PopularMoviesScreen: React.FC<Props> = ({ navigation }) => {
         </TouchableOpacity>
     );
 
+    const GreetingUser = ({ name }: { name: String }) => {
+        const screenWidth = Dimensions.get('window').width;
+        const [textWidth, setTextWidth] = useState(0);
+
+        const shouldShowOnlyHello = textWidth > (screenWidth - 16 - 16);
+
+        return (
+            <Text
+                style={styles.user}
+                onLayout={(event) => {
+                    const { width } = event.nativeEvent.layout;
+                    setTextWidth(width);
+                }}
+            >
+                {shouldShowOnlyHello ? 'Hello' : `Hello ${name}`}
+            </Text>
+        );
+    };
+
     return (
         <SafeAreaView style={styles.safeArea}>
+            <GreetingUser name={"Bartholomew Aloysius Wiggledoodle, Lord of Procrastination"}></GreetingUser>
             <FlatList
                 data={movies}
                 keyExtractor={(item) => item.id.toString()}
@@ -112,6 +132,11 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 16, // Padding at the top of the safe area
         backgroundColor: '#000',
+    },
+    user: {
+        color: 'white',
+        padding: 16,
+        fontSize: 18,
     },
     gridItem: {
         flex: 1,
