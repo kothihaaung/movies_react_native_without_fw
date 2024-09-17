@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.movies.app-mergeDebugResources-31:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+            "outputFile": "com.movies.app-mergeDebugResources-50:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/Users/thihathedev/.gradle/caches/8.8/transforms/d430c1ba7558782a5fdfdacec9725d7b/transformed/material-1.6.1/res/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+                    "source": "/Users/thihathedev/.gradle/caches/8.8/transforms/dd53a200c6559975fd8a65f61be82033/transformed/material-1.6.1/res/values-w600dp-land-v13/values-w600dp-land-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

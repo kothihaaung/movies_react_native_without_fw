@@ -10,7 +10,6 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.soloader.SoLoader
-import com.movies.features.calendarpicker.CalendarPicker
 import com.movies.features.calendarpicker.CalendarPickerPackage
 
 class MainApplication : Application(), ReactApplication {

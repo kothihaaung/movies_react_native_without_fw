@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.movies.app-mergeDebugResources-31:/values-v24/values-v24.xml",
+            "outputFile": "com.movies.app-mergeDebugResources-50:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/thihathedev/.gradle/caches/8.8/transforms/444ae3e40e2b43d3188cf28e0b4dc278/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
+                    "source": "/Users/thihathedev/.gradle/caches/8.8/transforms/33d97121b49f491fc0a0997e0fe388be/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/thihathedev/.gradle/caches/8.8/transforms/d430c1ba7558782a5fdfdacec9725d7b/transformed/material-1.6.1/res/values-v24/values-v24.xml",
+                    "source": "/Users/thihathedev/.gradle/caches/8.8/transforms/dd53a200c6559975fd8a65f61be82033/transformed/material-1.6.1/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

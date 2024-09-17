@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.movies.app-mergeDebugResources-31:/values-es-rES/values-es-rES.xml",
+            "outputFile": "com.movies.app-mergeDebugResources-50:/values-es-rES/values-es-rES.xml",
             "map": [
                 {
-                    "source": "/Users/thihathedev/.gradle/caches/8.8/transforms/b05a070e407358a86ce459a71fac5137/transformed/react-android-0.75.2-debug/res/values-es-rES/values-es-rES.xml",
+                    "source": "/Users/thihathedev/.gradle/caches/8.8/transforms/6a9d6fe4746c20ef68a07d6a8ebaf73b/transformed/react-android-0.75.2-debug/res/values-es-rES/values-es-rES.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
