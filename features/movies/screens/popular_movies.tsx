@@ -1,9 +1,22 @@
 import React, { useEffect } from 'react';
-import { FlatList, Text, View, StyleSheet, ActivityIndicator, Image, SafeAreaView, TouchableOpacity } from 'react-native';
+import { 
+    FlatList, 
+    Text, 
+    View, 
+    StyleSheet, 
+    ActivityIndicator, 
+    Image, 
+    SafeAreaView, 
+    TouchableOpacity, 
+    Button,
+    NativeModules
+} from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMoviesRequest, fetchMoviesSuccess, fetchMoviesFailure } from '../movies_action';
 import { Movie } from '../movie';
 import { StackNavigationProp } from '@react-navigation/stack';
+
+const { CalendarPicker } = NativeModules;
 
 // Type for the Redux state
 interface MoviesState {
@@ -84,6 +97,7 @@ const PopularMoviesScreen: React.FC<Props> = ({ navigation }) => {
         );
     }
 
+    // Cell item
     const renderItem = ({ item }: { item: Movie }) => (
         <TouchableOpacity style={styles.gridItem} onPress={() => handlePress(item)}>
             <Image
@@ -94,8 +108,22 @@ const PopularMoviesScreen: React.FC<Props> = ({ navigation }) => {
         </TouchableOpacity>
     );
 
+    const calButtonOnPress = () => {
+        console.log('calButtonOnPress');
+
+        // CalendarPicker.openCalendar()
+        //     .then((result: any) => console.log(result))
+        //     .catch((error: any) => console.error(error));
+    }
+
+    // Cal button
+    const CalButton = () => (
+        <Button title='Pick a date' onPress={calButtonOnPress} />
+    );
+
     return (
         <SafeAreaView style={styles.safeArea}>
+            <CalButton />
             <FlatList
                 data={movies}
                 keyExtractor={(item) => item.id.toString()}
@@ -112,6 +140,9 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 16, // Padding at the top of the safe area
         backgroundColor: '#000',
+    },
+    calButton: {
+        color: 'white'
     },
     gridItem: {
         flex: 1,
