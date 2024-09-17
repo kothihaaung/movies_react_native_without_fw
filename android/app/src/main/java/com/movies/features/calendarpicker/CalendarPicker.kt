@@ -1,9 +1,7 @@
 package com.movies.features.calendarpicker
 
 import android.app.DatePickerDialog
-import android.app.Dialog
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalContext
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
