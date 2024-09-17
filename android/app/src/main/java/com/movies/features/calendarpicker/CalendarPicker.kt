@@ -1,6 +1,7 @@
 package com.movies.features.calendarpicker
 
 import android.app.DatePickerDialog
+import android.app.Dialog
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalContext
@@ -8,7 +9,9 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactMethod
+import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Locale
 
 class CalendarPicker(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
     override fun getName(): String {
@@ -17,21 +20,32 @@ class CalendarPicker(reactContext: ReactApplicationContext) : ReactContextBaseJa
 
     @ReactMethod
     fun openCalendar(promise: Promise) {
-        // Jetpack Compose UI logic to open calendar picker
-//        promise.resolve("Date Picked from Android")
-
         val activity = currentActivity ?: return
         activity.runOnUiThread {
-            val composeView = ComposeView(activity)
-            composeView.setContent {
-                DatePicker { selectedDate ->
-                    promise.resolve(selectedDate) // Send the selected date to JS
-                }
-            }
+            val c = Calendar.getInstance()
+            val year = c.get(Calendar.YEAR)
+            val month = c.get(Calendar.MONTH)
+            val day = c.get(Calendar.DAY_OF_MONTH)
 
-            // Show the ComposeView in the activity
-            activity.setContentView(composeView)
+            // Create the DatePickerDialog
+            val pickerDialog = DatePickerDialog(activity, { _, selectedYear, selectedMonth, selectedDay ->
+                // Format the selected date
+                val selectedDate = "$selectedDay ${getMonthName(selectedMonth)}, $selectedYear"
+                // Resolve the promise with the selected date
+                promise.resolve(selectedDate)
+
+            }, year, month, day)
+
+            // Show the DatePickerDialog
+            pickerDialog.show()
         }
+    }
+
+    private fun getMonthName(monthIndex: Int): String {
+        val calendar = Calendar.getInstance()
+        calendar.set(Calendar.MONTH, monthIndex)
+        val monthDate = SimpleDateFormat("MMMM", Locale.getDefault())
+        return monthDate.format(calendar.time)
     }
 }
 
