@@ -70,6 +70,18 @@ struct DatePickerView: View {
   
   var body: some View {
     VStack {
+      HStack {
+        Spacer()
+        
+        Button(action: {
+          onDatePicked(selectedDate)
+        }) {
+          Text("Done")
+        }
+      }
+      .padding(.top)
+      .padding(.horizontal)
+      
       DatePicker(
         "Select a date",
         selection: $selectedDate,
@@ -78,12 +90,7 @@ struct DatePickerView: View {
       .datePickerStyle(GraphicalDatePickerStyle())
       .padding()
       
-      Button(action: {
-        onDatePicked(selectedDate)
-      }) {
-        Text("Done")
-      }
-      .padding()
+      Spacer()
     }
   }
 }
