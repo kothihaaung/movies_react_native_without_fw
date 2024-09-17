@@ -109,11 +109,11 @@ const PopularMoviesScreen: React.FC<Props> = ({ navigation }) => {
     );
 
     const calButtonOnPress = () => {
-        console.log('calButtonOnPress');
+        // console.log('calButtonOnPress');
 
-        // CalendarPicker.openCalendar()
-        //     .then((result: any) => console.log(result))
-        //     .catch((error: any) => console.error(error));
+        CalendarPicker.openCalendar()
+            .then((result: any) => console.log(result))
+            .catch((error: any) => console.error(error));
     }
 
     // Cal button
