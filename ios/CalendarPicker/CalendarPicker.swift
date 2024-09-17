@@ -11,7 +11,7 @@ import React
 @objc(CalendarPicker)
 class CalendarPicker: NSObject {
   
-  @objc(openCalendar:rejecter:)
+  @objc(openCalendar:reject:)
   func openCalendar(_ resolve: @escaping RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
     // Open calendar logic
     resolve("Date Picked")
