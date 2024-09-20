@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.movies.app-mergeDebugResources-31:/values-v25/values-v25.xml",
+            "outputFile": "com.movies.app-mergeDebugResources-50:/values-v25/values-v25.xml",
             "map": [
                 {
-                    "source": "/Users/thihathedev/.gradle/caches/8.8/transforms/444ae3e40e2b43d3188cf28e0b4dc278/transformed/appcompat-1.6.1/res/values-v25/values-v25.xml",
+                    "source": "/Users/thihathedev/.gradle/caches/8.8/transforms/33d97121b49f491fc0a0997e0fe388be/transformed/appcompat-1.6.1/res/values-v25/values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",
